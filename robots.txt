@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aitoolpro90-pixel.github.io/Ai-tool-boxpro/sitemap.xml
