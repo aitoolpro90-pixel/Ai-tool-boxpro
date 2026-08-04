@@ -1,100 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="WsY5ldVT9M5mfPEt3rc7k0y-_AJf9cRUI8vR99Bypt0" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Toolbox Pro</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f172a;color:#fff}
-header{background:#1e293b;padding:20px;text-align:center}
-header h1{color:#38bdf8}
-nav{margin-top:10px}
-nav a{color:#fff;text-decoration:none;margin:0 10px}
-.hero{padding:60px 20px;text-align:center}
-.hero h2{font-size:35px;color:#38bdf8}
-.hero p{margin-top:15px;color:#ddd}
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#38bdf8;
-color:#000;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-}
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:30px;
-}
-.card{
-background:#1e293b;
-padding:20px;
-border-radius:12px;
-}
-.card h3{
-color:#38bdf8;
-margin-bottom:10px;
-}
-footer{
-background:#111827;
-text-align:center;
-padding:20px;
-margin-top:30px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tool Box Pro - Best AI Tools Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .tool-card {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .tool-card h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
 </head>
-  <meta name="google-site-verification" content="WsY5ldVT9M5mfPEt3rc7k0y-_AJf9cRUI8vR99Bypt0" />
-  <!-- JavaScript Search Functionality -->
-    <script>
-        const searchInput = document.querySelector('.search-box');
-        const cards = document.querySelectorAll('.card');
-
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-
-            cards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                const tag = card.querySelector('.tag').textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || description.includes(searchTerm) || tag.includes(searchTerm)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
 <body>
 
-<header>
-<h1>AI Toolbox Pro</h1>
+    <header>
+        <h1>AI Tool Box Pro</h1>
+        <p>Your Ultimate Guide to Artificial Intelligence Tools</p>
+    </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">AI Tools</a>
-<a href="#">AI News</a>
-<a href="#">Prompts</a>
-<a href="#">Contact</a>
-</nav>
+    <div class="container">
+        <h2>Featured AI Tools</h2>
+        
+        <div class="tool-card">
+            <h3>ChatGPT</h3>
+            <p>An advanced language model by OpenAI for content writing, coding, and problem-solving.</p>
+            <a href="https://chatgpt.com" target="_blank" class="btn">Visit Tool</a>
+        </div>
 
-</header>
+        <div class="tool-card">
+            <h3>Midjourney</h3>
+            <p>A powerful AI tool that generates stunning images and art from text prompts.</p>
+            <a href="https://www.midjourney.com" target="_blank" class="btn">Visit Tool</a>
+        </div>
 
-<section class="hero">
+        <div class="tool-card">
+            <h3>Canva AI</h3>
+            <p>Create professional graphics, social media posts, and designs using smart AI features.</p>
+            <a href="https://www.canva.com" target="_blank" class="btn">Visit Tool</a>
+        </div>
+    </div>
 
-<h2>Discover The Best Free AI Tools</h2>
-
-<p>Latest AI Tools, AI News, AI Prompts and Tutorials.</p>
-
-<a class="btn" href="#">Explore Now</a>
-
-</section>
-
-<section class="cards">
-  
-  
+</body>
+</html>
