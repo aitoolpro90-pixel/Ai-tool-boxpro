@@ -1,83 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Tool Box Pro - Best AI Tools Directory</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-        .tool-card {
-            background: #fff;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .tool-card h3 {
-            margin-top: 0;
-            color: #007bff;
-        }
-        .btn {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Tool Box Pro - Discover the best AI tools for writing, images, video, coding, productivity and more.">
+<meta name="keywords" content="AI tools, ChatGPT, Gemini, AI image generator, AI video tools, AI coding tools">
+<meta name="robots" content="index, follow">
+<title>AI Tool Box Pro - Discover the Best AI Tools</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#07070b;
+  color:#fff;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(7,7,11,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #24242d;
+}
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-size:24px;
+  font-weight:800;
+}
+.logo span{color:#8b5cf6}
+.nav-links{
+  display:flex;
+  gap:25px;
+  color:#bbb;
+  font-size:14px;
+}
+.nav-links a:hover{color:#fff}
+
+.hero{
+  min-height:570px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:
+    radial-gradient(circle at 50% 20%,rgba(124,58,237,.35),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(37,99,235,.15),transparent 30%),
+    #07070b;
+}
+.hero-content{max-width:850px}
+.badge{
+  display:inline-block;
+  padding:7px 14px;
+  border:1px solid #44306d;
+  background:#171021;
+  color:#c4b5fd;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:25px;
+}
+.hero h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:1.05;
+  letter-spacing:-3px;
+  margin-bottom:22px;
+}
+.gradient{
+  background:linear-gradient(90deg,#a78bfa,#60a5fa,#f472b6);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p{
+  color:#aaa;
+  font-size:18px;
+  max-width:650px;
+  margin:0 auto 32px;
+}
+.search{
+  max-width:650px;
+  margin:auto;
+  display:flex;
+  background:#121218;
+  border:1px solid #30303b;
+  border-radius:15px;
+  padding:7px;
+}
+.search input{
+  flex:1;
+  background:transparent;
+  border:0;
+  outline:0;
+  color:#fff;
+  padding:14px;
+  font-size:15px;
+}
+.search button{
+  border:0;
+  border-radius:10px;
+  padding:0 24px;
+  background:#7c3aed;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+}
+.search button:hover{background:#8b5cf6}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:70px 20px;
+}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:28px;
+}
+.section-title h2{font-size:32px}
+.section-title p{color:#888;font-size:14px}
+
+.categories{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:10px;
+  margin-bottom:40px;
+}
+.cat{
+  white-space:nowrap;
+  padding:10px 17px;
+  border:1px solid #292934;
+  border-radius:30px;
+  background:#101016;
+  color:#bbb;
+  cursor:pointer;
+}
+.cat:hover,.cat.active{
+  background:#7c3aed;
+  color:#fff;
+  border-color:#7c3aed;
+}
+
+.tools{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card{
+  background:linear-gradient(145deg,#14141c,#0d0d12);
+  border:1px solid #272731;
+  border-radius:18px;
+  padding:24px;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#6d42d8;
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+.icon{
+  width:48px;
+  height:48px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#20153a;
+  font-size:24px;
+  margin-bottom:18px;
+}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:#999;font-size:14px;min-height:68px}
+.tag{
+  display:inline-block;
+  margin-top:16px;
+  padding:5px 9px;
+  border-radius:6px;
+  background:#1d1d26;
+  color:#aaa;
+  font-size:11px;
+}
+.visit{
+  display:block;
+  margin-top:18px;
+  padding:11px;
+  text-align:center;
+  border-radius:9px;
+  background:#7c3aed;
+  font-weight:bold;
+  font-size:14px;
+}
+.visit:hover{background:#8b5cf6}
+
+.news{
+  margin-top:70px;
+  background:linear-gradient(135deg,#12121a,#0c0c11);
+  border:1px solid #282832;
+  border-radius:22px;
+  padding:30px;
+}
+.news h2{margin-bottom:8px}
+.news p{color:#999}
+
+footer{
+  border-top:1px solid #24242d;
+  padding:40px 20px;
+  text-align:center;
+  color:#777;
+}
+footer a{color:#aaa;margin:0 8px}
+footer a:hover{color:#fff}
+
+.no-results{
+  display:none;
+  text-align:center;
+  color:#888;
+  padding:40px;
+}
+
+@media(max-width:800px){
+  .nav-links{display:none}
+  .tools{grid-template-columns:1fr}
+  .hero{min-height:520px}
+  .hero h1{letter-spacing:-2px}
+  .search button{padding:0 16px}
+  .section-title{display:block}
+  .section-title p{margin-top:7px}
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>AI Tool Box Pro</h1>
-        <p>Your Ultimate Guide to Artificial Intelligence Tools</p>
-    </header>
-
-    <div class="container">
-        <h2>Featured AI Tools</h2>
-        
-        <div class="tool-card">
-            <h3>ChatGPT</h3>
-            <p>An advanced language model by OpenAI for content writing, coding, and problem-solving.</p>
-            <a href="https://chatgpt.com" target="_blank" class="btn">Visit Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <h3>Midjourney</h3>
-            <p>A powerful AI tool that generates stunning images and art from text prompts.</p>
-            <a href="https://www.midjourney.com" target="_blank" class="btn">Visit Tool</a>
-        </div>
-
-        <div class="tool-card">
-            <h3>Canva AI</h3>
-            <p>Create professional graphics, social media posts, and designs using smart AI features.</p>
-            <a href="https://www.canva.com" target="_blank" class="btn">Visit Tool</a>
-        </div>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo">AI <span>Tool Box Pro</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#tools">AI Tools</a>
+      <a href="#news">AI News</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
-<div style="text-align: center; margin-top: 30px; padding: 15px; background: #eee;">
-        <a href="index.html" style="margin: 0 10px; text-decoration: none; color: #007bff;">Home</a> |
-        <a href="about.html" style="margin: 0 10px; text-decoration: none; color: #007bff;">About Us</a> |
-        <a href="privacy-policy.html" style="margin: 0 10px; text-decoration: none; color: #007bff;">Privacy Policy</a> |
-        <a href="contact.html" style="margin: 0 10px; text-decoration: none; color: #007bff;">Contact Us</a>
-</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">✦ Discover the Future of AI</div>
+
+    <h1>
+      Find the <span class="gradient">Best AI Tools</span><br>
+      in One Place
+    </h1>
+
+    <p>
+      Explore powerful AI tools for writing, images, video, coding,
+      productivity and much more.
+    </p>
+
+    <div class="search">
+      <input id="searchInput" type="text"
+        placeholder="Search AI tools...">
+      <button onclick="searchTools()">Search</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="tools">
+
+  <div class="section-title">
+    <div>
+      <h2>Featured AI Tools</h2>
+      <p>Popular tools people are using right now</p>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="cat active" onclick="filterTools('all',this)">All</div>
+    <div class="cat" onclick="filterTools('writing',this)">✍️ Writing</div>
+    <div class="cat" onclick="filterTools('image',this)">🎨 Images</div>
+    <div class="cat" onclick="filterTools('video',this)">🎬 Video</div>
+    <div class="cat" onclick="filterTools('coding',this)">💻 Coding</div>
+    <div class="cat" onclick="filterTools('productivity',this)">⚡ Productivity</div>
+  </div>
+
+  <div class="tools" id="toolGrid">
+
+    <article class="card" data-category="writing">
+      <div class="icon">🤖</div>
+      <h3>ChatGPT</h3>
+      <p>Write, research, brainstorm, code and solve everyday problems with AI.</p>
+      <span class="tag">Writing</span>
+      <a class="visit" href="https://chatgpt.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="writing">
+      <div class="icon">✨</div>
+      <h3>Google Gemini</h3>
+      <p>Google's AI assistant for writing, research, ideas and everyday tasks.</p>
+      <span class="tag">AI Assistant</span>
+      <a class="visit" href="https://gemini.google.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="image">
+      <div class="icon">🎨</div>
+      <h3>Midjourney</h3>
+      <p>Create impressive AI images and artwork from natural language prompts.</p>
+      <span class="tag">Images</span>
+      <a class="visit" href="https://www.midjourney.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="image">
+      <div class="icon">🖼️</div>
+      <h3>Canva AI</h3>
+      <p>Create designs, presentations, social posts and visual content faster.</p>
+      <span class="tag">Design</span>
+      <a class="visit" href="https://www.canva.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="video">
+      <div class="icon">🎬</div>
+      <h3>Runway</h3>
+      <p>AI-powered creative tools for generating and editing videos.</p>
+      <span class="tag">Video</span>
+      <a class="visit" href="https://runwayml.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="coding">
+      <div class="icon">💻</div>
+      <h3>GitHub Copilot</h3>
+      <p>AI coding assistance that helps developers write and understand code.</p>
+      <span class="tag">Coding</span>
+      <a class="visit" href="https://github.com/features/copilot" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="productivity">
+      <div class="icon">⚡</div>
+      <h3>Perplexity</h3>
+      <p>AI-powered search and research assistant for finding useful information.</p>
+      <span class="tag">Research</span>
+      <a class="visit" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="writing">
+      <div class="icon">📝</div>
+      <h3>Claude</h3>
+      <p>AI assistant for writing, analysis, coding and working with long content.</p>
+      <span class="tag">Writing</span>
+      <a class="visit" href="https://claude.ai/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+    <article class="card" data-category="video">
+      <div class="icon">📹</div>
+      <h3>HeyGen</h3>
+      <p>Create AI avatar videos and professional content with simple prompts.</p>
+      <span class="tag">Video</span>
+      <a class="visit" href="https://www.heygen.com/" target="_blank" rel="noopener">Visit Tool →</a>
+    </article>
+
+  </div>
+
+  <div class="no-results" id="noResults">
+    No AI tools found. Try another search.
+  </div>
+
+  <section class="news" id="news">
+    <h2>📰 Latest AI News</h2>
+    <p>
+      New AI tools, updates and technology stories will appear here
+      automatically through your n8n publishing system.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Tool Box Pro. All rights reserved.</p>
+  <div style="margin-top:12px">
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+<script>
+function filterTools(category,button){
+  document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
+  button.classList.add("active");
+
+  let cards=document.querySelectorAll(".card");
+  let visible=0;
+
+  cards.forEach(card=>{
+    if(category==="all" || card.dataset.category===category){
+      card.style.display="block";
+      visible++;
+    }else{
+      card.style.display="none";
+    }
+  });
+
+  document.getElementById("noResults").style.display=
+    visible ? "none" : "block";
+}
+
+function searchTools(){
+  let query=document.getElementById("searchInput").value.toLowerCase().trim();
+  let cards=document.querySelectorAll(".card");
+  let visible=0;
+
+  document.querySelectorAll(".cat").forEach(x=>x.classList.remove("active"));
+
+  cards.forEach(card=>{
+    let text=card.innerText.toLowerCase();
+
+    if(!query || text.includes(query)){
+      card.style.display="block";
+      visible++;
+    }else{
+      card.style.display="none";
+    }
+  });
+
+  document.getElementById("noResults").style.display=
+    visible ? "none" : "block";
+}
+
+document.getElementById("searchInput").addEventListener("keydown",function(e){
+  if(e.key==="Enter") searchTools();
+});
+</script>
+
 </body>
-</html>
+    </html>
