@@ -2,298 +2,456 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="AI Tool Box Pro - Discover the best AI tools for writing, images, video, coding and productivity.">
-<title>AI Tool Box Pro - Best AI Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Tool Box Pro - Best AI Tools & AI News</title>
+
+<meta name="description" content="Discover the best AI tools for writing, images, video, coding, productivity and more. Get the latest AI news and updates.">
+
+<meta name="keywords" content="AI tools, best AI tools, artificial intelligence, ChatGPT, AI image generator, AI video tools, AI coding tools, AI news">
+
+<meta name="robots" content="index, follow">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#07070b;
-color:#fff
-}
-a{text-decoration:none;color:inherit}
 
-nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 6%;
-background:#08080d;
-border-bottom:1px solid #222;
-position:sticky;
-top:0;
-z-index:10
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050507;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,5,8,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #25252d;
+}
+
+.nav{
+  max-width:1250px;
+  margin:auto;
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
 }
 
 .logo{
-font-size:25px;
-font-weight:900
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:-1px;
 }
 
 .logo span{
-background:linear-gradient(90deg,#9b5cff,#4da6ff);
--webkit-background-clip:text;
-color:transparent
+  background:linear-gradient(90deg,#8b35ff,#4c9cff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
-.navlinks{
-display:flex;
-gap:25px;
-color:#aaa;
-font-size:14px
+nav{
+  display:flex;
+  gap:25px;
 }
 
-.navlinks a:hover{color:#fff}
+nav a{
+  color:#bbb;
+  text-decoration:none;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#fff;
+}
+
+/* HERO */
 
 .hero{
-text-align:center;
-padding:90px 20px 100px;
-min-height:620px;
-background:
-radial-gradient(circle at 50% 20%,#321268 0,#120b20 30%,#07070b 68%);
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  padding:80px 20px;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:#641cff;
+  filter:blur(180px);
+  opacity:.22;
+  top:-250px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.hero-content{
+  position:relative;
+  max-width:950px;
 }
 
 .badge{
-display:inline-block;
-padding:12px 20px;
-border:1px solid #6940a5;
-border-radius:30px;
-color:#cbb9ff;
-background:#171021
+  display:inline-block;
+  padding:12px 22px;
+  border:1px solid #7040c7;
+  border-radius:50px;
+  color:#cbaeff;
+  background:rgba(100,30,255,.08);
+  margin-bottom:30px;
+  font-size:16px;
 }
 
-h1{
-font-size:clamp(48px,8vw,85px);
-line-height:1;
-max-width:900px;
-margin:30px auto 25px;
-letter-spacing:-3px
+.hero h1{
+  font-size:clamp(48px,8vw,90px);
+  line-height:.98;
+  letter-spacing:-5px;
+  margin-bottom:30px;
 }
 
 .gradient{
-background:linear-gradient(90deg,#fff,#a47aff,#55aaff);
--webkit-background-clip:text;
-color:transparent
+  background:linear-gradient(90deg,#fff,#a46aff,#4e9cff);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
-font-size:19px;
-line-height:1.7;
-color:#aaa
+  max-width:700px;
+  margin:auto;
+  color:#a6a6af;
+  font-size:20px;
+  line-height:1.7;
 }
 
-.search{
-max-width:720px;
-margin:40px auto;
-display:flex;
-padding:7px;
-background:#121218;
-border:1px solid #333;
-border-radius:18px
+/* SEARCH */
+
+.search-box{
+  max-width:760px;
+  margin:45px auto 0;
+  display:flex;
+  background:#111116;
+  border:1px solid #33333c;
+  border-radius:18px;
+  padding:8px;
 }
 
-.search input{
-flex:1;
-padding:16px;
-background:none;
-border:0;
-outline:0;
-color:white;
-font-size:17px
+.search-box input{
+  flex:1;
+  background:transparent;
+  border:0;
+  outline:none;
+  color:#fff;
+  padding:18px;
+  font-size:17px;
 }
 
-button,.btn{
-background:linear-gradient(135deg,#8b35ed,#4f46e5);
-border:0;
-color:#fff;
-font-weight:bold;
-padding:15px 25px;
-border-radius:12px;
-cursor:pointer
+.search-box button{
+  border:0;
+  border-radius:13px;
+  padding:0 30px;
+  background:linear-gradient(135deg,#7b2cff,#a247ff);
+  color:#fff;
+  font-weight:bold;
+  font-size:16px;
 }
 
-.section{
-max-width:1180px;
-margin:auto;
-padding:65px 20px
+/* CONTAINER */
+
+.container{
+  max-width:1250px;
+  margin:auto;
+  padding:70px 25px;
 }
 
-.section h2{
-font-size:34px;
-margin-bottom:10px
+.section-title{
+  font-size:38px;
+  margin-bottom:12px;
 }
 
-.muted{color:#888}
+.section-subtitle{
+  color:#888894;
+  margin-bottom:35px;
+}
+
+/* CATEGORY */
 
 .categories{
-display:flex;
-gap:10px;
-overflow:auto;
-padding:15px 0
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:20px;
+  margin-bottom:35px;
 }
 
-.cat{
-white-space:nowrap;
-background:#111118;
-border:1px solid #292933;
-color:#aaa;
-padding:11px 17px;
-border-radius:30px
+.category{
+  flex:none;
+  border:1px solid #303038;
+  background:#111116;
+  color:#aaa;
+  padding:11px 20px;
+  border-radius:30px;
+  cursor:pointer;
 }
 
-.cat.active,.cat:hover{
-background:#702bd4;
-color:#fff
+.category.active,
+.category:hover{
+  background:#7b2cff;
+  color:#fff;
+  border-color:#7b2cff;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
+/* TOOL GRID */
+
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.card{
-background:linear-gradient(180deg,#15151d,#0d0d12);
-border:1px solid #292932;
-border-radius:20px;
-padding:22px;
-transition:.25s
+.tool-card{
+  background:linear-gradient(145deg,#121217,#09090c);
+  border:1px solid #292932;
+  border-radius:22px;
+  padding:28px;
+  min-height:285px;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
 }
 
-.card:hover{
-transform:translateY(-6px);
-border-color:#7545bd;
-box-shadow:0 15px 45px #000
+.tool-card:hover{
+  transform:translateY(-7px);
+  border-color:#7138d9;
+  box-shadow:0 20px 60px rgba(104,35,255,.18);
 }
 
-.icon{
-width:52px;
-height:52px;
-display:grid;
-place-items:center;
-font-size:25px;
-border-radius:15px;
-background:#292039
+.tool-icon{
+  width:55px;
+  height:55px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#712cff,#a855ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  margin-bottom:22px;
+}
+
+.tool-card h3{
+  font-size:23px;
+  margin-bottom:12px;
+}
+
+.tool-card p{
+  color:#9999a4;
+  line-height:1.6;
+  min-height:75px;
 }
 
 .tag{
-display:inline-block;
-margin-top:15px;
-padding:6px 10px;
-font-size:12px;
-border-radius:20px;
-color:#c9aaff;
-background:#241638
+  display:inline-block;
+  background:#1c1c25;
+  color:#aaa;
+  padding:7px 12px;
+  border-radius:8px;
+  font-size:12px;
+  margin-top:15px;
 }
-
-.card h3{
-font-size:21px;
-margin-bottom:8px
-}
-
-.card p{
-color:#999;
-line-height:1.55;
-min-height:48px
-}
-
-.cardfoot{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:20px
-}
-
-.stars{color:#ffc107}
 
 .visit{
-padding:9px 14px;
-border-radius:10px;
-background:#24242e;
-font-size:13px;
-font-weight:bold
+  display:block;
+  margin-top:20px;
+  background:linear-gradient(135deg,#762bff,#9c45ff);
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  padding:13px;
+  border-radius:12px;
+  font-weight:bold;
 }
 
-.visit:hover{background:#7135d9}
+/* NEWS */
 
-.feature{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:20px
+.news-section{
+  margin-top:70px;
 }
 
-.bigcard{
-padding:32px;
-min-height:260px;
-border:1px solid #34264c;
-border-radius:24px;
-background:radial-gradient(circle at 80% 20%,#38206e,#15131d 55%)
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.bigcard h3{font-size:30px}
-
-.bigcard p{
-color:#aaa;
-line-height:1.7
+.news-card{
+  background:#111116;
+  border:1px solid #292932;
+  border-radius:20px;
+  padding:25px;
+  transition:.3s;
 }
 
-.cta{
-text-align:center;
-padding:70px 20px;
-background:radial-gradient(circle,#1b1032,#07070b 65%);
-border-top:1px solid #222
+.news-card:hover{
+  transform:translateY(-5px);
+  border-color:#7336e0;
 }
 
-.footer{
-text-align:center;
-padding:40px;
-color:#777
+.news-date{
+  color:#8f52ff;
+  font-size:13px;
+  margin-bottom:15px;
 }
 
-.noresults{
-display:none;
-text-align:center;
-padding:40px;
-color:#888
+.news-card h3{
+  font-size:21px;
+  line-height:1.3;
+  margin-bottom:13px;
 }
 
-@media(max-width:800px){
-.navlinks{display:none}
-.grid{grid-template-columns:1fr 1fr}
-.feature{grid-template-columns:1fr}
+.news-card p{
+  color:#9999a4;
+  line-height:1.6;
 }
 
-@media(max-width:520px){
-.grid{grid-template-columns:1fr}
-.hero{padding-top:70px}
-.hero p{font-size:16px}
+.news-btn{
+  display:inline-block;
+  margin-top:20px;
+  color:#b783ff;
+  text-decoration:none;
+  font-weight:bold;
 }
+
+/* LOADING */
+
+.loading{
+  color:#888;
+  padding:30px;
+  text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #22222a;
+  padding:50px 25px;
+  text-align:center;
+  color:#777;
+}
+
+.footer-logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#fff;
+  margin-bottom:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .tool-grid,
+  .news-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  nav{
+    display:none;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .hero{
+    min-height:600px;
+  }
+
+  .hero h1{
+    font-size:52px;
+    letter-spacing:-3px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .search-box{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .search-box button{
+    height:55px;
+  }
+
+  .tool-grid,
+  .news-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    font-size:31px;
+  }
+
+  .container{
+    padding:50px 18px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">AI <span>Tool Box Pro</span></div>
+<!-- HEADER -->
 
-<div class="navlinks">
-<a href="#tools">Tools</a>
-<a href="#categories">Categories</a>
-<a href="#trending">Trending</a>
-<a href="about.html">About</a>
+<header>
+
+<div class="nav">
+
+<div class="logo">
+AI <span>Tool Box Pro</span>
 </div>
+
+<nav>
+<a href="#tools">AI Tools</a>
+<a href="#news">AI News</a>
+<a href="#categories">Categories</a>
 </nav>
 
-<header class="hero">
+</div>
 
-<div class="badge">✦ Discover the Future of AI</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+✦ Discover the Future of AI
+</div>
 
 <h1>
 Find the <span class="gradient">Best AI Tools</span><br>
@@ -305,350 +463,290 @@ Explore powerful AI tools for writing, images, video,
 coding, productivity and much more.
 </p>
 
-<div class="search">
-<input id="search" placeholder="Search AI tools...">
-<button onclick="searchTools()">Search</button>
-</div>
+<div class="search-box">
 
-</header>
+<input
+type="text"
+id="searchInput"
+placeholder="Search AI tools..."
+>
 
-
-<section class="section" id="categories">
-
-<h2>Explore Categories</h2>
-<p class="muted">Find the right AI for your task</p>
-
-<div class="categories">
-
-<button class="cat active" onclick="filterCat('All',this)">All</button>
-
-<button class="cat" onclick="filterCat('Writing',this)">
-✍️ Writing
-</button>
-
-<button class="cat" onclick="filterCat('Image',this)">
-🎨 Image
-</button>
-
-<button class="cat" onclick="filterCat('Video',this)">
-🎬 Video
-</button>
-
-<button class="cat" onclick="filterCat('Coding',this)">
-💻 Coding
-</button>
-
-<button class="cat" onclick="filterCat('Productivity',this)">
-⚡ Productivity
-</button>
-
-<button class="cat" onclick="filterCat('Audio',this)">
-🎧 Audio
+<button onclick="searchTools()">
+Search
 </button>
 
 </div>
+
+</div>
+
 </section>
 
 
-<section class="section" id="trending">
+<!-- TOOLS -->
 
-<h2>🔥 Trending AI Tools</h2>
-<p class="muted">Popular AI tools worth checking out</p>
+<section class="container" id="tools">
 
-<div class="grid" id="toolGrid">
+<h2 class="section-title">
+🔥 Popular AI Tools
+</h2>
+
+<p class="section-subtitle">
+Discover powerful AI tools selected for creators, students and professionals.
+</p>
 
 
-<div class="card" data-cat="Writing" data-name="ChatGPT">
+<div class="categories" id="categories">
 
-<div class="icon">💬</div>
+<button class="category active" onclick="filterTools('All',this)">
+All
+</button>
 
-<span class="tag">Writing</span>
+<button class="category" onclick="filterTools('Writing',this)">
+Writing
+</button>
+
+<button class="category" onclick="filterTools('Image',this)">
+Image
+</button>
+
+<button class="category" onclick="filterTools('Video',this)">
+Video
+</button>
+
+<button class="category" onclick="filterTools('Coding',this)">
+Coding
+</button>
+
+<button class="category" onclick="filterTools('Productivity',this)">
+Productivity
+</button>
+
+</div>
+
+
+<div class="tool-grid" id="toolGrid">
+
+
+<div class="tool-card" data-category="Writing">
+
+<div class="tool-icon">🤖</div>
 
 <h3>ChatGPT</h3>
 
 <p>
-AI assistant for writing, research, brainstorming,
-coding and everyday tasks.
+AI assistant for writing, coding, research,
+brainstorming and everyday tasks.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★★</span>
+<span class="tag">Writing</span>
 
 <a class="visit"
 href="https://chatgpt.com/"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
+<div class="tool-card" data-category="Image">
 
-<div class="card" data-cat="Image" data-name="Midjourney">
-
-<div class="icon">🎨</div>
-
-<span class="tag">Image</span>
+<div class="tool-icon">🎨</div>
 
 <h3>Midjourney</h3>
 
 <p>
-Create imaginative and high-quality images
-from text prompts.
+Create stunning AI images and artwork from
+simple text prompts.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★★</span>
+<span class="tag">Image</span>
 
 <a class="visit"
 href="https://www.midjourney.com/"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
+<div class="tool-card" data-category="Writing">
 
-<div class="card" data-cat="Image" data-name="Canva AI">
-
-<div class="icon">🖌️</div>
-
-<span class="tag">Image</span>
-
-<h3>Canva AI</h3>
-
-<p>
-Create designs, social posts, presentations
-and visual content with AI.
-</p>
-
-<div class="cardfoot">
-<span class="stars">★★★★☆</span>
-
-<a class="visit"
-href="https://www.canva.com/"
-target="_blank">
-Visit Tool →
-</a>
-</div>
-
-</div>
-
-
-
-<div class="card" data-cat="Coding" data-name="GitHub Copilot">
-
-<div class="icon">💻</div>
-
-<span class="tag">Coding</span>
-
-<h3>GitHub Copilot</h3>
-
-<p>
-AI coding assistant that helps developers
-write code faster.
-</p>
-
-<div class="cardfoot">
-<span class="stars">★★★★★</span>
-
-<a class="visit"
-href="https://github.com/features/copilot"
-target="_blank">
-Visit Tool →
-</a>
-</div>
-
-</div>
-
-
-
-<div class="card" data-cat="Video" data-name="Runway">
-
-<div class="icon">🎬</div>
-
-<span class="tag">Video</span>
-
-<h3>Runway</h3>
-
-<p>
-AI-powered creative tools for generating
-and editing video.
-</p>
-
-<div class="cardfoot">
-<span class="stars">★★★★☆</span>
-
-<a class="visit"
-href="https://runwayml.com/"
-target="_blank">
-Visit Tool →
-</a>
-</div>
-
-</div>
-
-
-
-<div class="card" data-cat="Writing" data-name="Claude">
-
-<div class="icon">🧠</div>
-
-<span class="tag">Writing</span>
+<div class="tool-icon">✨</div>
 
 <h3>Claude</h3>
 
 <p>
-AI assistant for writing, analysis, coding
-and problem solving.
+Powerful AI assistant for writing, analysis,
+reasoning and long documents.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★★</span>
+<span class="tag">Writing</span>
 
 <a class="visit"
 href="https://claude.ai/"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
+<div class="tool-card" data-category="Image">
 
-<div class="card" data-cat="Audio" data-name="ElevenLabs">
+<div class="tool-icon">🖼️</div>
 
-<div class="icon">🎙️</div>
-
-<span class="tag">Audio</span>
-
-<h3>ElevenLabs</h3>
+<h3>Canva AI</h3>
 
 <p>
-AI voice generation and audio tools for
-creators and businesses.
+Create designs, presentations, social posts
+and images using AI.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★☆</span>
+<span class="tag">Image</span>
 
 <a class="visit"
-href="https://elevenlabs.io/"
+href="https://www.canva.com/"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
+<div class="tool-card" data-category="Video">
 
-<div class="card" data-cat="Productivity" data-name="Notion AI">
+<div class="tool-icon">🎬</div>
 
-<div class="icon">⚡</div>
+<h3>HeyGen</h3>
 
-<span class="tag">Productivity</span>
+<p>
+Create AI avatar videos and professional
+content using simple prompts.
+</p>
+
+<span class="tag">Video</span>
+
+<a class="visit"
+href="https://www.heygen.com/"
+target="_blank">
+Visit Tool →
+</a>
+
+</div>
+
+
+<div class="tool-card" data-category="Video">
+
+<div class="tool-icon">🎥</div>
+
+<h3>Runway</h3>
+
+<p>
+Generate and edit creative videos with
+advanced artificial intelligence.
+</p>
+
+<span class="tag">Video</span>
+
+<a class="visit"
+href="https://runwayml.com/"
+target="_blank">
+Visit Tool →
+</a>
+
+</div>
+
+
+<div class="tool-card" data-category="Coding">
+
+<div class="tool-icon">💻</div>
+
+<h3>GitHub Copilot</h3>
+
+<p>
+AI coding assistant that helps developers
+write and understand code faster.
+</p>
+
+<span class="tag">Coding</span>
+
+<a class="visit"
+href="https://github.com/features/copilot"
+target="_blank">
+Visit Tool →
+</a>
+
+</div>
+
+
+<div class="tool-card" data-category="Productivity">
+
+<div class="tool-icon">⚡</div>
 
 <h3>Notion AI</h3>
 
 <p>
-Write, summarize, organize and work with
-information using AI.
+Write, summarize, organize and manage your
+work with AI.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★☆</span>
+<span class="tag">Productivity</span>
 
 <a class="visit"
 href="https://www.notion.so/product/ai"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
+<div class="tool-card" data-category="Image">
 
-<div class="card" data-cat="Video" data-name="Pika">
+<div class="tool-icon">🌈</div>
 
-<div class="icon">✨</div>
-
-<span class="tag">Video</span>
-
-<h3>Pika</h3>
+<h3>Adobe Firefly</h3>
 
 <p>
-Create and transform videos with
-generative AI.
+Generate images, designs and creative assets
+using generative AI.
 </p>
 
-<div class="cardfoot">
-<span class="stars">★★★★☆</span>
+<span class="tag">Image</span>
 
 <a class="visit"
-href="https://pika.art/"
+href="https://firefly.adobe.com/"
 target="_blank">
 Visit Tool →
 </a>
-</div>
 
 </div>
 
 
-</div>
-
-<div class="noresults" id="noresults">
-No tools found. Try another search.
 </div>
 
 </section>
 
 
-<section class="section" id="tools">
+<!-- NEWS -->
 
-<h2>🚀 More AI Tools</h2>
-<p class="muted">A growing collection for creators and professionals</p>
+<section class="container news-section" id="news">
 
-<div class="feature">
+<h2 class="section-title">
+📰 Latest AI News
+</h2>
 
-<div class="bigcard">
-
-<span class="tag">AI DIRECTORY</span>
-
-<h3>One place. Thousands of possibilities.</h3>
-
-<p>
-Discover tools for content creation, marketing,
-education, design, development and productivity.
+<p class="section-subtitle">
+New AI tools, updates and technology stories published automatically.
 </p>
 
-<a class="btn" href="#trending">
-Explore Tools
-</a>
 
-</div>
+<div id="latest-ai-news" class="news-grid">
 
-
-<div class="bigcard">
-
-<span class="tag">FOR CREATORS</span>
-
-<h3>Save time with AI</h3>
-
-<p>
-Find the right tool faster instead of opening
-dozens of tabs.
-</p>
-
-<a class="btn" href="#categories">
-Browse Categories
-</a>
-
+<div class="loading">
+Loading latest AI news...
 </div>
 
 </div>
@@ -656,85 +754,97 @@ Browse Categories
 </section>
 
 
-<div class="cta">
+<!-- FOOTER -->
 
-<h2>Ready to discover your next AI tool?</h2>
+<footer>
 
-<p class="muted">
-Search the directory and start exploring.
-</p>
-
-<a class="btn" href="#trending">
-Explore AI Tools →
-</a>
-
+<div class="footer-logo">
+AI Tool Box Pro
 </div>
 
+<p>
+Discover AI tools. Learn AI. Build the future.
+</p>
 
-<footer class="footer">
-
-© 2026 AI Tool Box Pro ·
-<a href="privacy-policy.html">Privacy</a> ·
-<a href="contact.html">Contact</a>
+<p style="margin-top:20px;">
+© 2026 AI Tool Box Pro. All rights reserved.
+</p>
 
 </footer>
 
 
 <script>
 
-let currentCat="All";
-
-function filterCat(cat,el){
-
-currentCat=cat;
-
-document.querySelectorAll(".cat")
-.forEach(x=>x.classList.remove("active"));
-
-el.classList.add("active");
-
-applyFilters();
-
-}
+/* TOOL SEARCH */
 
 function searchTools(){
 
-applyFilters();
-
-document.getElementById("trending")
-.scrollIntoView({behavior:"smooth"});
-
-}
-
-function applyFilters(){
-
-let q=document
-.getElementById("search")
+const input =
+document.getElementById("searchInput")
 .value
 .toLowerCase()
 .trim();
 
-let shown=0;
+const cards =
+document.querySelectorAll(".tool-card");
 
-document.querySelectorAll(".card").forEach(card=>{
+cards.forEach(card=>{
 
-let categoryOK=
-currentCat==="All" ||
-card.dataset.cat===currentCat;
+const text =
+card.innerText.toLowerCase();
 
-let searchOK=
-!q ||
-card.dataset.name
-.toLowerCase()
-.includes(q) ||
+card.style.display =
+text.includes(input) ? "block" : "none";
+
+});
+
+}
+
+
+/* LIVE SEARCH */
+
+document
+.getElementById("searchInput")
+.addEventListener("input",function(){
+
+const value=this.value.toLowerCase();
+
+document
+.querySelectorAll(".tool-card")
+.forEach(card=>{
+
+card.style.display =
 card.innerText
 .toLowerCase()
-.includes(q);
+.includes(value)
+? "block"
+: "none";
 
-if(categoryOK && searchOK){
+});
+
+});
+
+
+/* CATEGORY FILTER */
+
+function filterTools(category,button){
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+document
+.querySelectorAll(".tool-card")
+.forEach(card=>{
+
+if(category==="All" ||
+card.dataset.category===category){
 
 card.style.display="block";
-shown++;
 
 }else{
 
@@ -744,17 +854,180 @@ card.style.display="none";
 
 });
 
-document.getElementById("noresults")
-.style.display=shown ? "none":"block";
+}
+
+
+/* LOAD ARTICLES FROM GITHUB */
+
+async function loadAINews(){
+
+const container =
+document.getElementById("latest-ai-news");
+
+try{
+
+const api =
+"https://api.github.com/repos/aitoolpro90-pixel/Ai-tool-boxpro/contents/content/posts";
+
+const response =
+await fetch(api);
+
+if(!response.ok){
+
+throw new Error("GitHub posts folder not found");
 
 }
 
-document.getElementById("search")
-.addEventListener("keydown",function(e){
+const files =
+await response.json();
 
-if(e.key==="Enter") searchTools();
+const posts =
+files
+.filter(file =>
+file.name.toLowerCase().endsWith(".md")
+)
+.reverse()
+.slice(0,10);
 
-});
+
+if(posts.length===0){
+
+container.innerHTML=`
+<div class="news-card">
+<h3>🚀 AI News Coming Soon</h3>
+<p>
+Your automated AI news articles will appear here
+when n8n publishes them to GitHub.
+</p>
+</div>
+`;
+
+return;
+
+}
+
+
+let html="";
+
+
+for(const file of posts){
+
+try{
+
+const raw =
+await fetch(file.download_url)
+.then(r=>r.text());
+
+
+let title =
+file.name
+.replace(".md","")
+.replace(/[-_]/g," ");
+
+
+let description =
+"Latest AI tools, technology and artificial intelligence news.";
+
+
+let date="";
+
+
+const titleMatch =
+raw.match(/title:\s*["']?(.*?)["']?\s*$/mi);
+
+const descMatch =
+raw.match(/description:\s*["']?(.*?)["']?\s*$/mi);
+
+const dateMatch =
+raw.match(/date:\s*["']?(.*?)["']?\s*$/mi);
+
+
+if(titleMatch)
+title=titleMatch[1];
+
+if(descMatch)
+description=descMatch[1];
+
+if(dateMatch)
+date=dateMatch[1];
+
+
+html+=`
+
+<article class="news-card">
+
+<div class="news-date">
+${date || "Latest AI News"}
+</div>
+
+<h3>
+${title}
+</h3>
+
+<p>
+${description}
+</p>
+
+<a
+href="${file.html_url}"
+target="_blank"
+class="news-btn">
+
+Read Article →
+</a>
+
+</article>
+
+`;
+
+}catch(error){
+
+console.log(error);
+
+}
+
+}
+
+
+container.innerHTML =
+html ||
+`
+<div class="news-card">
+<h3>No articles yet</h3>
+<p>
+Your n8n publishing system is ready.
+Articles will appear here automatically.
+</p>
+</div>
+`;
+
+}catch(error){
+
+console.log(error);
+
+container.innerHTML=`
+
+<div class="news-card">
+
+<h3>⚡ AI News System Ready</h3>
+
+<p>
+Your n8n workflow will publish new AI articles
+into this section automatically.
+</p>
+
+</div>
+
+`;
+
+}
+
+}
+
+
+/* START NEWS */
+
+loadAINews();
 
 </script>
 
